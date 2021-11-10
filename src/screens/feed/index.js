@@ -8,30 +8,33 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useNavigation } from '@react-navigation/native'
 
 export const Feed = () => {
-    const navigation = useNavigation()
+  const navigation = useNavigation()
 
-        function handleStart (){
-          navigation.navigate('Favorites')
-        }
+  function handleFavorites(params) {
+    navigation.navigate('Favorites', { params })
+  }
 
-         return (
-          <View style={styles.container}>
-        <ScrollView>
+  return (
+    <View style={styles.container}>
+      <ScrollView>
         {players.length > 0 && players.map((item) =>
-            <View style={styles.container}>
-                <Text style={styles.textName}>{item.name}</Text>
-                <Text style={styles.textCountry}>{item.country}</Text>
-                <Text style={styles.textTeam}>{item.team}</Text>
-            </View>
-        )} 
+          <View style={styles.container}>
+            <Text style={styles.textName}>{item.name}</Text>
+            <Text style={styles.textCountry}>{item.country}</Text>
+            <Text style={styles.textTeam}>{item.team}</Text>
+            <RectButton style={styles.rectcss}
+              onPress={() => handleFavorites(item.id)}>
+              <Text>FAVORITES</Text>
+            </RectButton>
+          </View>
 
-      
+        )}
+
+      </ScrollView>
       <RectButton style={styles.rectcss}
-        onPress={handleStart}
-      >
-            <Text>START</Text>
+        onPress={() => handleFavorites()}>
+        <Text>List</Text>
       </RectButton>
-    
-        </ScrollView>
+
     </View>)
-}      
+}

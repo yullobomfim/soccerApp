@@ -1,32 +1,37 @@
 export const players =[
     {
+        id:1,
         name:'Cristiano Ronaldo',
         country:'Portugal',
         team:'Manchester United',
-        avatar:'../../src/components/players/cristiano.jpg'
+        avatar: require('../assets/players/cristiano.jpg')
     },
     {
+        id:2,
         name:'Ronaldo Gaúcho',
         country:'Brasil',
         team:'Barcelona',
-        avatar:'../../src/components/players/gaucho.jpg'
+        avatar: require('../assets/players/gaucho.jpg')
     },
-    {
+    { 
+        id:3,
         name:'Ronaldo Fenomeno',
         country:'Brasil',
         team:'Real Madri',
-        avatar:'../../src/components/players/fenomeno.jpg'
+        avatar: require('../assets/players/fenomeno.jpg')
     },
     {
+        id:4,
         name:'Davi Luiz',
         country:'Brasil',
         team:'Flamengo',
-        avatar:'../../src/components/players/davi.jpg'
+        avatar: require('../assets/players/davi.jpg')
     },
-    {
+    {        
+        id:5,
         name:'Lionel Messi',
         country:'Argentina',
         team:'Barcelona',
-        avatar:'../../src/components/players/messi.jpg'
+        avatar: require('../assets/players/messi.jpg')
     }
 ]
