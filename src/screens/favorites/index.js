@@ -5,7 +5,7 @@ import { styles } from "./styles"
 import { NavigationContainer, useRoute } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { useNavigation } from '@react-navigation/native'
-import { RectButton } from 'react-native-gesture-handler'
+import { FlatList, RectButton } from 'react-native-gesture-handler'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 
 
@@ -21,16 +21,18 @@ export const Favorites = () => {
     try {
       const jsonValue = JSON.stringify(value)
 
-      var lista_pessoas = JSON.parse(localStorage.getItem('players') || '[]');
+      var peopleList = JSON.parse(localStorage.getItem('players') || '[]');
+
       // Adiciona pessoa ao cadastro
-      lista_pessoas.push({
+
+      peopleList.push({
         value
       });
 
       // Salva a lista alterada
-      localStorage.setItem("players", JSON.stringify(lista_pessoas));
+      localStorage.setItem("players", JSON.stringify(peopleList));
 
-      console.log('Salva com sucesso.');
+      console.log('Save Successful.');
     } catch (e) {
       console.error(e)
     }
@@ -47,20 +49,18 @@ export const Favorites = () => {
   }
 
   function getFavorites() {
-    var lista_pessoas = JSON.parse(localStorage.getItem('players') || '[]');
-    return lista_pessoas;
+    const peopleList = JSON.parse(localStorage.getItem('players') || '[]');
+    return peopleList;
   }
 
-  if(route.params){
+  if (route.params) {
     storage()
-    console.log('entrei')
+    console.log('Storage complete')
   }
-  
-  var dados = getFavorites()
 
-  function handleFeed() {
-    navigation.navigate('Feed')
-  }
+  const dados = getFavorites()
+
+
   return (
     <View style={styles.container}>
       <ScrollView>
@@ -74,14 +74,6 @@ export const Favorites = () => {
             </ImageBackground>
           </View>
         )}
-
-
-        <RectButton style={styles.rectcss}
-          onPress={handleFeed}
-        >
-          <Text>FEED</Text>
-        </RectButton>
-
       </ScrollView>
     </View>)
 }
