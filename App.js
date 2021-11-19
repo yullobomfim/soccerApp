@@ -1,18 +1,17 @@
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native'
 import { StyleSheet } from 'react-native';
-import { createStackNavigator } from '@react-navigation/stack';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { Provider } from 'react-redux';
-import { store } from './src/store/store';
 import { Feed } from './src/screens/feed';
 import { Favorites } from './src/screens/favorites';
 import { Search } from './src/screens/search';
-
+import { store } from './src/store/store';
+import { NavigationContainer } from '@react-navigation/native'
+import { createStackNavigator } from '@react-navigation/stack';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { Provider } from 'react-redux';
 
 const { Navigator, Screen } = createStackNavigator();
-// const Stack = createNativeStackNavigator();
+//const Stack = createNativeStackNavigator();
 
 const Tab = createBottomTabNavigator();
 
