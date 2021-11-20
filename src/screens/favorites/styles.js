@@ -1,27 +1,41 @@
 import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
+    title: {
+        justifyContent: 'center',
+        textAlign: 'center',
+        padding: 10,
+        backgroundColor: '#000',
+        color: 'yellow',
+        fontSize: 17,
+        fontWeight: 'bold'
+    },
     container: {
         flex: 1,
-        width:'100%',
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        width: '100%',
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#000',  
+        backgroundColor: '#000',
     },
-    textName:{
-        color:'#fff'
+    content: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: '45%',
+        backgroundColor: 'gray',
+        margin: 5,
+        paddingBottom: 5
+    },
 
+    textName: {
+        margin: 5,
+        color: 'yellow'
     },
-    textCountry:{
-        color:'white'
+    textCountry: {
+        color: '#fff'
     },
-    textTeam:{
-        color:'yellow'
-    },
-    rectcss: {
-        backgroundColor:'yellow',
-        padding: 10,
-        justifyContent: 'center',
-        alignItems: 'center',
+    textTeam: {
+        color: '#fff'
     }
 })

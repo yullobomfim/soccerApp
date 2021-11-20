@@ -16,12 +16,11 @@ export const Feed = () => {
   }
 
   return (
-    <View>
       <ScrollView>
-        <Text style={styles.title}>My Players</Text>
+        <Text style={styles.title}> My Players</Text>
         <View style={styles.container}>
-          {players.length > 0 && players.map((item) =>
-            <View style={styles.content}>
+          {players.length > 0 && players.map((item, index) =>
+            <View key={index} style={styles.content}>
               <Image
                 source={item.avatar}S
                 style={{ width: 160, height: 170, padding: 5 }}
@@ -38,6 +37,5 @@ export const Feed = () => {
           )}
         </View>
       </ScrollView>
-    </View>
   )
 }

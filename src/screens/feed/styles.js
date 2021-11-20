@@ -8,7 +8,7 @@ export const styles = StyleSheet.create({
         backgroundColor: '#000',
         color: 'yellow',
         fontSize: 17,
-        fontWeight: 'bolder'
+        fontWeight: 'bold'
     },
     container: {
         flex: 1,
@@ -28,14 +28,6 @@ export const styles = StyleSheet.create({
         margin: 5,
         paddingBottom: 5
     },
-    addtofavorites: {
-        backgroundColor:'yellow',
-        padding: 7,
-        width: '80%',
-        justifyContent: 'center',
-        alignItems: 'center',
-        borderRadius: 5
-    },
     textName:{
         margin: 5,
         color:'yellow'
@@ -45,6 +37,14 @@ export const styles = StyleSheet.create({
     },
     textTeam:{
         color:'#fff'
+    },
+    addtofavorites: {
+        backgroundColor:'yellow',
+        padding: 7,
+        width: '80%',
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 5
     },
     rectcss: {
         backgroundColor:'yellow',
