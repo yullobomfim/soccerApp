@@ -1,19 +1,19 @@
-import React from "react"
+import React, {useState, useEffect} from "react"
 import { Image, View, Text, ScrollView } from "react-native"
 import { players } from '../../api/index'
 import { styles } from "./styles"
 import { useRoute } from '@react-navigation/native'
+import AsyncStorage from "@react-native-async-storage/async-storage"
 
 export const Favorites = () => {
   const route = useRoute();
   const idUser = route.params;
+  const [dados, dadosSet] = useState([])
 
   // Salva os dados favoritos no storage
   const storeData = async (value) => {
     try {
-      const jsonValue = JSON.stringify(value)
-
-      var peopleList = JSON.parse(localStorage.getItem('players') || '[]');
+      var peopleList = JSON.parse(await AsyncStorage.getItem('players') || '[]');
 
       // Adiciona pessoa ao cadastro
 
@@ -22,7 +22,7 @@ export const Favorites = () => {
       });
 
       // Salva a lista alterada
-      localStorage.setItem("players", JSON.stringify(peopleList));
+      AsyncStorage.setItem("players", JSON.stringify(peopleList));
 
     } catch (e) {
       console.error(e)
@@ -39,18 +39,32 @@ export const Favorites = () => {
     })
   }
 
-  function getFavorites() {
-    const peopleList = JSON.parse(localStorage.getItem('players') || '[]');
+  if (route.params) {
+    var repeat = false
+    dados.map((item) => {
+      if (item.value.id === route.params.params) {
+         repeat = true
+      }
+    })
+    if (!repeat) {
+      storage()
+    }
+  }
+
+  async function getFavorites() {
+    const peopleList = JSON.parse(await AsyncStorage.getItem('players') || '[]');
     return peopleList;
   }
+  
+  useEffect(() => {
+    async function fetchMyAPI() {
+      let response = await getFavorites()
+      dadosSet(response)
+    }
+    fetchMyAPI()
+  }, [idUser])
 
-  if (route.params) {
-    storage()
-  }
-
-  const dados = getFavorites()
-
-  return (
+    return (
     <ScrollView>
       <Text style={styles.title}> My Favorites Players</Text>
       <View style={styles.container}>

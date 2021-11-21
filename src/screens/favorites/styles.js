@@ -13,7 +13,7 @@ export const styles = StyleSheet.create({
     container: {
         flex: 1,
         flexDirection: 'row',
-        flexWrap: 'wrap',
+        flexWrap: 'wrap', 
         width: '100%',
         justifyContent: 'center',
         alignItems: 'center',
@@ -22,7 +22,7 @@ export const styles = StyleSheet.create({
     content: {
         justifyContent: 'center',
         alignItems: 'center',
-        width: '45%',
+        width: '40%',
         backgroundColor: 'gray',
         margin: 5,
         paddingBottom: 5
@@ -33,9 +33,11 @@ export const styles = StyleSheet.create({
         color: 'yellow'
     },
     textCountry: {
-        color: '#fff'
+        color: '#fff',
+        margin: 5
     },
     textTeam: {
+        margin: 5,
         color: '#fff'
     }
 })

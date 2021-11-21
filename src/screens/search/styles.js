@@ -12,30 +12,30 @@ export const styles = StyleSheet.create({
     },
     container: {
         flex: 1,
-        width:'100%',
-        justifyContent: 'space-between',
+        flexDirection: 'row',
+        flexWrap: 'wrap', 
+        width: '100%',
+        justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#000',
-        padding: 5,
-        flexDirection: 'row',
-        flexWrap: 'wrap'  
     },
     content: {
         justifyContent: 'center',
         alignItems: 'center',
-        width: '45%',
+        width: '40%',
         backgroundColor: 'gray',
         margin: 5,
         paddingBottom: 5
     },
-    textName:{
-        color:'#fff'
+    textName: {
+        margin: 5,
+        color: 'yellow'
     },
-    textCountry:{
-        color:'white'
+    textCountry: {
+        color: '#fff'
     },
-    textTeam:{
-        color:'yellow'
+    textTeam: {
+        color: '#fff'
     },
     button: {
         padding: 10,

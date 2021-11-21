@@ -75,5 +75,6 @@ export const players =[
         country:'Brazil',
         team:'São Paulo',
         avatar: require('../assets/players/denilson.jpg')
-    }
+    },
+    
 ]
