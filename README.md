@@ -21,7 +21,7 @@ Este projeto foi desenvolvido com as seguintes tecnologias:
 
 ## 📟 Layout e Análise da aplicação
 O layout da aplicação **My Players** foi desenvolvido por mim e não tem a pretensão de ser definitiva, mas apenas atender aos critérios da avaliação desta disciplina e o código fonte esta disponivel no GitHub [**yullobomfim**](https://github.com/yullobomfim/soccerApp.git/).
-O projeto está disponível também atráves de vídeo autoral explicando as principais funcionalidades e o desenvolvimento do projeto atráves dos links :  [**Parte1**](https://loom.com/share/5d894f26469e4fc7beacf16f7324d16d/) e [**Parte2**](https://loom.com/share/5d894f26469e4fc7beacf16f7324d16d/)
+O projeto está disponível também atráves de vídeo autoral explicando as principais funcionalidades e o desenvolvimento do projeto atráves dos links :  [**Parte1**](https://loom.com/share/5d894f26469e4fc7beacf16f7324d16d/) e [**Parte2**](https://www.loom.com/share/72f07a63ab4840399497ebac56904907)
 
 ## 🔧 Instalação e Execução
 
