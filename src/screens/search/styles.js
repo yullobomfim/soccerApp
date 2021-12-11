@@ -15,14 +15,16 @@ export const styles = StyleSheet.create({
         flexDirection: 'row',
         flexWrap: 'wrap', 
         width: '100%',
-        justifyContent: 'center',
+        justifyContent: 'space-between',
         alignItems: 'center',
         backgroundColor: '#000',
+        padding: 5
+
     },
     content: {
         justifyContent: 'center',
         alignItems: 'center',
-        width: '40%',
+        width: '45%',
         backgroundColor: 'gray',
         margin: 5,
         paddingBottom: 5
@@ -49,6 +51,15 @@ export const styles = StyleSheet.create({
         alignItems: 'center',
         fontWeight: 'bold'
     },
+    addtofavorites: {
+        backgroundColor:'yellow',
+        padding: 7,
+        width: '80%',
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 5
+    },
+
     input: {
         padding: 10,
         color: 'gray',
