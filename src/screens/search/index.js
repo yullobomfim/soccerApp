@@ -3,11 +3,11 @@ import { Image, View, Text, ScrollView, TextInput } from "react-native"
 import { RectButton } from 'react-native-gesture-handler'
 import { players } from '../../api/index'
 import { styles } from "./styles"
+import { useNavigation } from '@react-navigation/native'
 
 export const Search = () => {
     const [playerName, setPlayerName] = useState()
     const [playerSelected, setPlayerSelected] = useState([])
-
 
     function playerNameInputHandler(value) {
         setPlayerName(value)
@@ -18,6 +18,12 @@ export const Search = () => {
 
         setPlayerSelected(search)
     }
+    const navigation = useNavigation()
+
+    function handleFavorites(params) {
+      navigation.navigate('Favorites', {params})
+    }
+  
 
     return (
         <ScrollView>
@@ -42,6 +48,10 @@ export const Search = () => {
                         </Image>
                         <Text key={item.name} style={styles.textName}>{item.name}</Text>
                         <Text style={styles.textCountry}>{item.country}</Text>
+                        <RectButton style={styles.addtofavorites}
+                            onPress={() => handleFavorites(item.id)}>
+                            <Text>Add to Favorites</Text>
+                        </RectButton>
 
                     </View>
                 )
