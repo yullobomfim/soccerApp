@@ -10,6 +10,10 @@ import { Search } from './src/screens/search';
 import { store } from './src/store/store';
 import { Provider } from 'react-redux';
 
+// from axios
+// import api from "./src/api/index";
+
+
 const { Navigator, Screen } = createStackNavigator();
 const Stack = createNativeStackNavigator();
 

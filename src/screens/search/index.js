@@ -1,17 +1,31 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Image, View, Text, ScrollView, TextInput } from "react-native"
 import { RectButton } from 'react-native-gesture-handler'
-import { players } from '../../api/index'
+import api from '../../api/index'
 import { styles } from "./styles"
 import { useNavigation } from '@react-navigation/native'
 
 export const Search = () => {
     const [playerName, setPlayerName] = useState()
     const [playerSelected, setPlayerSelected] = useState([])
+    const [players, setPlayers] = useState([])
+
 
     function playerNameInputHandler(value) {
         setPlayerName(value)
     }
+
+    async function load() {
+        api.get('/api/players').then((response) => {
+            setPlayers(response.data.data)
+        }).catch((err) => {
+            console.error("ops! ocorreu um erro" + err);
+        });
+    }
+
+    useEffect(() => {
+        load()
+    }, []);
 
     function searchPlayer(value) {
         const search = players.filter((item) => item.name.toLocaleLowerCase().match(value.toLocaleLowerCase()))
@@ -21,9 +35,9 @@ export const Search = () => {
     const navigation = useNavigation()
 
     function handleFavorites(params) {
-      navigation.navigate('Favorites', {params})
+        navigation.navigate('Favorites', { params })
     }
-  
+
 
     return (
         <ScrollView>

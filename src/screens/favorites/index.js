@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react"
 import { Image, View, Text, ScrollView } from "react-native"
-import { players } from '../../api/index'
+import  api  from '../../api/index'
 import { styles } from "./styles"
 import { useRoute } from '@react-navigation/native'
 import AsyncStorage from "@react-native-async-storage/async-storage"
@@ -9,6 +9,8 @@ export const Favorites = () => {
   const route = useRoute();
   const idUser = route.params;
   const [dados, dadosSet] = useState([])
+  const [players, setPlayers] = useState([]);
+
 
   // Salva os dados favoritos no storage
   const storeData = async (value) => {
@@ -28,6 +30,18 @@ export const Favorites = () => {
       console.error(e)
     }
   }
+  async function load() {
+    api.get('/api/players').then((response) => {
+        setPlayers(response.data.data)
+    }).catch((err) => {
+        console.error("ops! ocorreu um erro" + err);
+    });
+}
+
+useEffect(() => {
+    load()
+}, []);
+
 
   function storage() {
 
