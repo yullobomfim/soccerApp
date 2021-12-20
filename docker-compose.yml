@@ -1,10 +1,21 @@
-version: "3" ## especifica a versão do docker-compose file
-
-services: ## Define um serviço
-  nodejs: ## nome do serviço
-    build: . ## localização do dockerfile
-    command: npm start ## comando a executar
+version: '3'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: app
     ports:
-      - "3000:3333" ## redirecionamento de porta quando chegar alguma requisição na porta 3333 chama o container na porta 3333
+      - "19000:19000"
+      - "19001:19001"
+      - "19002:19002"
+      - "19006:19006"
     volumes:
-      - .:/usr/app ## monitoro a pasta atual . e envio as alterações para /usr/app
+      - /usr/src/node_modules
+      - .:/usr/src
+    stdin_open: true
+    environment:
+      - NODE_ENV=development
+      - REACT_NATIVE_PACKAGER_HOSTNAME=${HOSTNAME}
+
+      
